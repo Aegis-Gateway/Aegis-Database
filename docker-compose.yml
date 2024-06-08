@@ -1,11 +1,11 @@
 services:
-    postgresql-master:
+    postgresql:
         image: bitnami/postgresql:latest
         restart: unless-stopped
         ports:
             - '2345:5432/tcp'
         volumes:
-            - pg-master-data:/bitnami/postgresql
+            - pg-data:/bitnami/postgresql
         environment:
             - POSTGRESQL_PGAUDIT_LOG=READ,WRITE
             - POSTGRESQL_LOG_HOSTNAME=true
@@ -15,7 +15,7 @@ services:
             - POSTGRESQL_USERNAME=postgres
             - POSTGRESQL_PASSWORD=<YOUR_PASSWORD>
             - POSTGRESQL_DATABASE=api_gateway
-    redis-master:
+    redis:
         image: bitnami/redis:latest
         restart: unless-stopped
         ports:
@@ -24,5 +24,5 @@ services:
             - REDIS_PASSWORD=<YOUR_PASSWORD>
 
 volumes:
-    pg-master-data:
-        name: pg-master-data
+    pg-data:
+        name: pg-data
