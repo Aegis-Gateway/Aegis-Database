@@ -1,3 +1,3 @@
-# Aegis Database
+# apictl database
 
-Database for Aegis Gateway Server
+Database for apictl server
